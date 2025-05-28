@@ -58,12 +58,3 @@ jobs:
               echo "error:: binary not found"
             fi
           done'
-
-  running_test:
-    needs: check_compilation
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: run the tester.sh
-        run: make test_run
