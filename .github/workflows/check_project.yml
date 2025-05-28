@@ -9,7 +9,7 @@ on:
       - ga-ignore-*
 
 env:
-  EXECUTABLES: 'my_project'
+  EXECUTABLES: 'setting_up'
 
 jobs:
   check_coding_style:
