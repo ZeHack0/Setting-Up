@@ -1,53 +1,63 @@
 ##
-## EPITECH PROJECT, 2023
-## Makefile
+## EPITECH PROJECT, 2024
+## starting_project
 ## File description:
-## .
+## Makefile
 ##
+
+include flags.mk
 
 NAME = setting_up
 
-SRC = src/main.c
+CC := gcc
 
-SRC += src/map/load_map.c
-SRC += src/map/init_maps.c
-SRC += src/map/get_width.c
-SRC += src/map/get_height.c
-SRC += src/map/nbr_char_line.c
+BUILD_DIR := .build
 
-SRC += src/algo/algorithm.c
-SRC += src/algo/set_biggest_square.c
+SRC := $(shell find src -name '*.c')
+OBJ := $(SRC:%.c=.build/%.o)
 
-SRC += src/description/description.c
+LDFLAGS = -L./Jarvis/ -lmy
 
-SRC += src/error_gestion/argument_error.c
-SRC += src/error_gestion/check_all_error.c
-SRC += src/error_gestion/first_line_error.c
+GRE := \033[0;32m
+GRA := \033[0;37m
+BLU := \033[0;34m
+RED := \033[0;31m
 
-OBJS = $(SRC:.c=.o)
+all:
+	@ cd Jarvis/ && $(MAKE) -j --no-print-directory
+	@ $(MAKE) $(NAME) -j --no-print-directory
 
-CFLAGS = -Wall -Wextra -I./include -I./lib/include -g
+$(NAME): $(OBJ)
+	@ $(CC) -o $(NAME) $(OBJ) $(LDFLAGS) $(CFLAGS)
+	@ echo -e "$(BLU)===--- $(GRE)Compiled$(GRA) < $@ > $(BLU)---===$(GRA)"
 
-LFLAGS = -L. -lmy
-
-all: $(NAME)
-
-$(NAME): $(OBJS)
-	make -C lib/
-	gcc -o $(NAME) $(OBJS) $(LFLAGS) -g
+$(BUILD_DIR)/%.o: %.c
+	@ mkdir -p $(dir $@)
+	@ $(CC) $(CFLAGS) -c -o $@ $< $(LDFLAGS)
+	@ echo -e "$(GRE)Compiled$(GRA) $<"
 
 clean:
-	$(RM) $(OBJS)
-	make clean -C lib/
-	$(RM) *.a
+	@ cd Jarvis/ && $(MAKE) clean -j --no-print-directory
+	@ $(RM) $(SRC:.c=.gcda)
+	@ $(RM) $(SRC:.c=.gcno)
+	@ $(RM) $(OBJ) $(TOBJ)
+	@ $(RM) *.a
+	@ echo -e "$(RED)Cleaned$(GRA)"
 
 fclean: clean
-	$(RM) $(NAME)
-	$(RM) *.a
+	@ cd Jarvis/ && $(MAKE) fclean -j --no-print-directory
+	@ $(RM) $(NAME)
+	@ $(RM) -r $(BUILD_DIR)
+	@ $(RM) *.a
+	@ echo -e "$(RED)Force cleaned$(GRA)"
 
-re: fclean all
+test_run: re
+	@ cd tests/ && ./test.sh
 
-debug:
-	$(WFLAGS) -g
+.PHONY: clean fclean
 
-.PHONY: all clean fclean re debug
+re: fclean
+	@ cd Jarvis/ && $(MAKE) fclean --no-print-directory
+	@ $(MAKE) all -j --no-print-directory
+
+.PHONY: re

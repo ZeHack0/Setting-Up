@@ -1,0 +1,20 @@
+# Fichiers de compilation
+*.a
+*.o
+*.out
+*.exe
+
+# Dossiers de build
+.build/
+
+# Fichiers spécifiques à l'éditeur/IDE
+.idea/
+.vscode/
+*.iml
+vgcore.*
+
+# Fichiers de coding-style
+coding-style-reports.log
+
+# Fichiers spécifiques au projet
+setting_up

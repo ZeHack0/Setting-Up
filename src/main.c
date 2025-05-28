@@ -1,38 +1,18 @@
 /*
-** EPITECH PROJECT, 2023
-** sokoban
+** EPITECH PROJECT, 2024
+** starting_project
 ** File description:
-** .
+** main.c
 */
 
 #include "project.h"
 
-static int second_main(int argc, char **argv)
+int main(int ac, char **av)
 {
-    char *map = load_map(argc, argv);
-    int width = get_width(map);
-    int height = get_height(argv[1]);
-    int **cache = init_maps(map, width, height);
-    struct position square = {-1, -1, -1};
-
-    algorithm(cache, &square);
-    set_biggest_square(map, &square, width);
-    my_putstr(map);
-    if (argc == -1)
-        my_putstr("FAILURE\n");
-    return 0;
-}
-
-int main(int argc, char **argv)
-{
-    if (my_strcmp(argv[1], "-h") == 0) {
-        description();
+    if (print_the_help(ac, av) == true)
         return 0;
-    }
-    if (check_all_error(argc) == 84) {
+    if (error_handling(ac, av) == false)
         return 84;
-    } else {
-        second_main(argc, argv);
-    }
+    printf("initializing the project...\n");
     return 0;
 }
