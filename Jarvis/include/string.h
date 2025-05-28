@@ -8,6 +8,8 @@
 #ifndef STRING_H
     #define STRING_H
 
+    #include <stdbool.h>
+
 char *my_convert_int_to_char(int nb);
 char *my_revstr(char *str);
 void my_sort_int_array(int *array, int size);
