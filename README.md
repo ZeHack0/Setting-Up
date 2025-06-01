@@ -17,9 +17,9 @@ you can solve a two type of map. In first a map read in file (.txt), and genreat
 
 ## Prerequisites
 
-- Make: https://www.gnu.org/software/make/
-- GCC: https://gcc.gnu.org/
-- LibC: https://www.gnu.org/software/libc/
+- [Make](https://www.gnu.org/software/make/)
+- [GCC](https://gcc.gnu.org/)
+- [LibC](https://www.gnu.org/software/libc/)
 
 ## Installation
 
