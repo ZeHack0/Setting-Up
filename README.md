@@ -59,7 +59,8 @@ This command uses the Makefile to compile the project. Ensure that the Makefile 
    ./space_hunter [size_of_map] [pattern of the map] | cat -e
 
 ## Example of Maps
-   
+
+- This is an example of an maps:
    ```bash
    9
    ............................
