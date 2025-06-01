@@ -7,12 +7,13 @@
 
 #include "project.h"
 
-int main(int ac, char **av)
+int main(const int ac, char **av)
 {
     if (print_the_help(ac, av) == true)
         return 0;
     if (error_handling(ac, av) == false)
         return 84;
-    printf("initializing the project...\n");
+    if (setting_up(ac, av) == false)
+        return 84;
     return 0;
 }
