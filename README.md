@@ -9,6 +9,8 @@ It is a first semester project of the elementary programming module in C at Epit
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Usage](#Usage)
+- [Example of Maps](#example_of_Maps)
+- [Authors](#authors)
 
 ## Description
 
@@ -55,3 +57,21 @@ This command uses the Makefile to compile the project. Ensure that the Makefile 
 
    ```bash
    ./space_hunter [size_of_map] [pattern of the map] | cat -e
+
+## Example of Maps
+   
+   ```bash
+   9
+   ............................
+   ....o.......................
+   ............o...............
+   ............................
+   ....o.......................
+   .............o..............
+   ............................
+   ......o...............o.....
+   ..o.......o.................
+
+## Authors
+- Ronan BOTREL | [Github](https://github.com/ZeHack0)
+
