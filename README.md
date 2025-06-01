@@ -6,6 +6,7 @@ It is a first semester project of the elementary programming module in C at Epit
 ## Table of Contents
 
 - [Description](#description)
+- [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Usage](#Usage)
 
@@ -14,7 +15,7 @@ It is a first semester project of the elementary programming module in C at Epit
 It is an Algorithm for finding the largest pssible square on map a while avoiding obstacle.
 you can solve a two type of map. In first a map read in file (.txt), and genreate your own map.
 
-##prerequisites
+## Prerequisites
 
 - Make: https://www.gnu.org/software/make/
 - GCC: https://gcc.gnu.org/
