@@ -9,7 +9,7 @@ It is a first semester project of the elementary programming module in C at Epit
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Usage](#Usage)
-- [Example of Maps](#example)
+- [Example of Maps](#example-of-maps)
 - [Authors](#authors)
 
 ## Description
