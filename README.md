@@ -9,7 +9,7 @@ It is a first semester project of the elementary programming module in C at Epit
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Usage](#Usage)
-- [Example of Maps](#example_of_Maps)
+- [Example of Maps](#example)
 - [Authors](#authors)
 
 ## Description
@@ -30,7 +30,7 @@ you can solve a two type of map. In first a map read in file (.txt), and genreat
 1. Clone the repository :
 
    ```bash
-   git clone git@github.com:ZeHack0/Setting-Up.git
+   git clone https://github.com/ZeHack0/Setting-Up.git
 
 1. Navigate to the project directory :
 
@@ -61,6 +61,7 @@ This command uses the Makefile to compile the project. Ensure that the Makefile 
 ## Example of Maps
 
 - This is an example of an maps:
+
    ```bash
    9
    ............................
